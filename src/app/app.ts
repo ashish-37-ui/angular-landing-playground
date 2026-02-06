@@ -1,12 +1,21 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import { NavbarComponent } from './components/navbar/navbar';
+import { HeroComponent } from './components/hero/hero';
+import { FeaturesComponent } from './components/features/features';
+import { FooterComponent } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    NavbarComponent,
+    HeroComponent,
+    FeaturesComponent,
+    FooterComponent
+  ],
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('angular-landing-playground');
-}
+export class AppComponent {}

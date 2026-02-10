@@ -1,2 +1,15 @@
-<app-hero></app-hero>
-<app-features></app-features>
+<app-hero>
+  title="Build Modern Web Apps with Angular"
+  subtitle="Fast, scalable and production ready"
+  buttonText="Get Started">
+</app-hero>
+
+<p *ngIf="loading" style="text-align:center;">
+  Loading features...
+</p>
+
+<app-features
+  *ngIf="!loading"
+  [features]="featureList">
+</app-features>
+

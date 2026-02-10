@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
-  standalone : true,
-  imports: [],
+  standalone: true,
   templateUrl: './hero.html',
-  styleUrl: './hero.css',
+  styleUrls: ['./hero.css']
 })
 export class HeroComponent {
+  @Input() title = '';
+  @Input() subtitle = '';
+  @Input() buttonText = '';
 
+  scrollToFeatures() {
+    const el = document.getElementById('features');
+    el?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

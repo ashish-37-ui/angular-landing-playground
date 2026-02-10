@@ -1,19 +1,23 @@
 .features {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 .card {
-  width: 220px;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  padding: 28px 20px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
   text-align: center;
   background: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
 
 /* 🔽 Mobile */
 @media (max-width: 768px) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,9 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./features.css']
 })
 export class FeaturesComponent {
-  features = [
-    { title: 'Fast', desc: 'Optimized rendering' },
-    { title: 'Scalable', desc: 'Grows with your app' },
-    { title: 'Modern', desc: 'Standalone Angular' }
-  ];
+ @Input() features: { title: string; desc: string }[] = [];
 }

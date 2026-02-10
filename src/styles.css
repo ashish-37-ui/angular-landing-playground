@@ -6,6 +6,9 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+    background: var(--bg-page);
+  color: var(--text-primary);
+   transition: background 0.25s ease, color 0.25s ease;
 }
 
 app-root {
@@ -19,4 +22,20 @@ app-root {
   max-width: 1100px;
   margin: 0 auto;
   padding: 40px 20px;
+}
+
+:root {
+  --bg-page: #f5f7fa;
+  --bg-surface: #ffffff;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --border-color: #e0e0e0;
+}
+
+.dark {
+ --bg-page: #0f0f0f;
+  --bg-surface: #1c1c1c;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #333333;
 }

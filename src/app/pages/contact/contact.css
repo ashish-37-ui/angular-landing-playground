@@ -1,21 +1,27 @@
 /* Page background */
+* {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
 .contact-wrapper {
   min-height: calc(100vh - 140px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background: #f5f7fa;
+  background: var(--bg-page);
 }
 
 /* Card */
 .contact-card {
   width: 100%;
   max-width: 520px;
-  background: white;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+   border: 1px solid var(--border-color);
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Headings */
@@ -27,7 +33,7 @@
 
 .subtitle {
   text-align: center;
-  color: #666;
+  color: var(--text-secondary);
   margin: 12px 0 32px;
   font-size: 15px;
 }
@@ -56,20 +62,27 @@ textarea {
   padding: 12px 14px;
   font-size: 14px;
   border-radius: 8px;
-  border: 1px solid #ddd;
   transition: border-color 0.2s, box-shadow 0.2s;
+   background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
 }
 
 input:focus,
 textarea:focus {
   outline: none;
   border-color: #1976d2;
-  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.25);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary);
 }
 
 /* Errors */
 small {
-  color: #d32f2f;
+  color:  #ff6b6b;
   font-size: 12px;
 }
 
@@ -94,3 +107,14 @@ button:hover {
 button:active {
   transform: scale(0.98);
 }
+
+.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+

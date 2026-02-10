@@ -1,13 +1,12 @@
 <section class="contact-wrapper">
   <div class="contact-card">
+        <div class="success" *ngIf="success">✅ Message sent successfully!</div>
+
     <h2>Contact Me</h2>
-    <p class="subtitle">
-      Have a question or want to work together?
-      Drop a message below 👇
-    </p>
+    <p class="subtitle">Have a question or want to work together? Drop a message below 👇</p>
+
 
     <form [formGroup]="contactForm" (ngSubmit)="submit()">
-
       <div class="form-group">
         <label>Name</label>
         <input type="text" formControlName="name" />

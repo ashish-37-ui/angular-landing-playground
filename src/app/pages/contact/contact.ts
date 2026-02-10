@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { ContactService } from '../../services/contact';
+
 
 @Component({
   selector: 'app-contact',
@@ -12,8 +14,9 @@ import { NgIf } from '@angular/common';
 export class ContactComponent {
 
   contactForm;
+  success = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private contactService: ContactService) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -28,6 +31,14 @@ export class ContactComponent {
     }
 
     console.log('Form Submitted:', this.contactForm.value);
-    this.contactForm.reset();
-  }
+    this.contactService.sendMessage(this.contactForm.value)
+    .subscribe(() => {
+      this.success = true;
+      this.contactForm.reset();
+
+    setTimeout(() => {
+      this.success = false;
+    }, 3000);
+  });
+}
 }

@@ -32,10 +32,12 @@
   list-style: none;
   display: flex;
   gap: 20px;
+   align-items: center;
 }
 
 .nav-links li {
   cursor: pointer;
+  display: inline-block;
 }
 
 @media (max-width: 768px) {

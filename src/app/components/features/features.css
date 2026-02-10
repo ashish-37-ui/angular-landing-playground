@@ -2,15 +2,16 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
+  background: var(--bg-page);
 }
 
 .card {
-  padding: 28px 20px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  text-align: center;
-  background: white;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card:hover {

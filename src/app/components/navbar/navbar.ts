@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink,RouterLinkActive } from '@angular/router';
+import { ThemeService } from '../../services/theme';
 
 
 @Component({
   selector: 'app-navbar',
   standalone : true,
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css',
+  styleUrls: ['./navbar.css'],
 })
 export class NavbarComponent {
+
+  constructor(private themeService: ThemeService) {}
+
+  toggleTheme() {
+    this.themeService.toggle();
+  }
 
 }

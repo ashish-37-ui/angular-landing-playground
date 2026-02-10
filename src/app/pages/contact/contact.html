@@ -1,0 +1,38 @@
+<section class="contact-wrapper">
+  <div class="contact-card">
+    <h2>Contact Me</h2>
+    <p class="subtitle">
+      Have a question or want to work together?
+      Drop a message below 👇
+    </p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="submit()">
+
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name" />
+        <small *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+          Name is required
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName="email" />
+        <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+          Enter a valid email
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="4" formControlName="message"></textarea>
+        <small *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+          Message must be at least 10 characters
+        </small>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
